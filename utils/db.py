@@ -1,5 +1,5 @@
 from flask import jsonify
-from decouple import config
+#from decouple import config
 from utils.Respuestas import Respuesta
 from utils.getdbconnection import DBConnection
 

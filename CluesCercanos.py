@@ -2,7 +2,6 @@ from flask import Flask, jsonify, request
 from utils.db import Acceso
 from flask import Blueprint
 from flask_jwt_extended import jwt_required
-from decouple import config
 from utils.CallOpenAI import OpenAIConector
 
 
