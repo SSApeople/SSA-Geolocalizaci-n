@@ -6,7 +6,7 @@ from decouple import config
 from utils.CallOpenAI import OpenAIConector
 
 
-Localidades_bp = Blueprint('', __name__)
+Localidades_bp = Blueprint('Ub', __name__)
 
 @Localidades_bp.route('Estados',methods=['GET'])
 def GetEstados():

@@ -22,7 +22,7 @@ def create_app():
     
     app.register_blueprint(auth_bp, url_prefix="/auth")
     app.register_blueprint(Clues_bp, url_prefix="/Clues")
-    app.register_blueprint(Localidades_bp, url_prefix="/Localidades")
+    app.register_blueprint(Localidades_bp, url_prefix="/Ub")
     
     
  
