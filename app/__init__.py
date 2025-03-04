@@ -15,12 +15,15 @@ def create_app():
     # Importar y registrar Blueprints
     from .auth import auth_bp
     from CluesCercanos import Clues_bp
+    from Localidades import Localidades_bp
  
     
      
     
     app.register_blueprint(auth_bp, url_prefix="/auth")
     app.register_blueprint(Clues_bp, url_prefix="/Clues")
+    app.register_blueprint(Localidades_bp, url_prefix="/Localidades")
+    
     
  
     
