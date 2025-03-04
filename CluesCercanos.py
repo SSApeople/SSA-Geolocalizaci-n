@@ -11,6 +11,20 @@ Clues_bp = Blueprint('Clues', __name__)
 def CluesCercanos(latitud,longuitud,distancia):
     CluesCerca = Acceso().EjecutaStoredProcedure("sp_ObtenerUnidadesMedicasCercanas", [float(latitud),float(longuitud),int(distancia)])
     return jsonify(CluesCerca)
+
+
+@Clues_bp.route('Cerca/ByDireccion',methods=['POST'])
+def CluesCercanosDireccion():
+    params = request.get_json()
+    busqueda = params.get('busqueda')
+    CluesCerca = Acceso().EjecutaStoredProcedure("sp_ObtenerUnidadesMedicasCercanasDireccion", [str(busqueda)])
+    return jsonify(CluesCerca)
     
+
+@Clues_bp.route('ById/<IdUnidad>',methods=['GET'])
+def CluesById(IdUnidad):
+    Clues = Acceso().EjecutaStoredProcedure("sp_ObtenerUnidadMedica", [int(IdUnidad)])
+    return jsonify(Clues)
     
+ 
 
