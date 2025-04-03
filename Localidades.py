@@ -27,3 +27,10 @@ def GetLocalidades(Mun,Local):
 def GetLocalidadesEstMun(Localidad):
     Estados = Acceso().EjecutaStoredProcedure("SP_ObtenerUbicaciones", ["LOC_MUN_ESTA",None, None, Localidad])
     return jsonify(Estados)
+
+@Localidades_bp.route('ObtenerLocalidades/<CP>',methods=['GET'])
+def LocalidadesGet(CP):
+    condiciones = {
+        "REF_CP": ("=", CP)
+    }
+    return Acceso("VW_OBTENERLOCALIDADES").EjecutaVista(columnas=["ID_LOCALIDAD","NOM_LOCALIDAD","ID_MUNICIPIO","NOM_MUNICIPIO","ID_ENTIDAD","NOM_ENTIDAD"],condiciones=condiciones)
