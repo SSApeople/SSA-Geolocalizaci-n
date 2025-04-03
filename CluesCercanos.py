@@ -25,6 +25,12 @@ def CluesCercanosDireccion():
 def CluesById(IdUnidad):
     Clues = Acceso().EjecutaStoredProcedure("sp_ObtenerUnidadMedica", [int(IdUnidad)])
     return jsonify(Clues)
+
+
+@Clues_bp.route('Asignado/<IdUnidad>/<latitud>/<longuitud>',methods=['GET'])
+def CluesAsignado(IdUnidad,latitud,longuitud):
+    Clues = Acceso().EjecutaStoredProcedure("sp_DetalleUnidadAsignada", [int(IdUnidad),float(latitud),float(longuitud)])
+    return jsonify(Clues)
     
  
 
