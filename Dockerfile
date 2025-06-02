@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 # Expone el puerto 5002, que es el puerto donde Flask escuchará
-EXPOSE 5015
+EXPOSE 5016
 
 # Comando para ejecutar la aplicación Flask cuando el contenedor se inicie
 CMD ["python", "app.py"]
